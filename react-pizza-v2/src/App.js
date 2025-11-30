@@ -7,6 +7,12 @@ import PizzaBlock from "./components/PizzaBlock";
 
 import './scss/app.scss';
 
+
+import pizzas from './assets/pizzas.json';
+
+console.log(pizzas);
+
+
 function App() {
 
     return (
@@ -24,6 +30,21 @@ function App() {
                         <h2 className="content__title">Все пиццы</h2>
 
                         <div className="content__items">
+                            {
+                                pizzas.map(pizza => {
+                                    return (
+                                        <PizzaBlock
+                                            title={pizza.title}
+                                            price={pizza.price}
+                                            imageUrl={pizza.imageUrl}
+                                            pizzaTypes={pizza.types}
+                                            pizzaSizes={pizza.sizes}
+                                        />
+                                    // spread-operator
+                                    // <PizzaBlock {...pizza} />
+                                    )
+                                })
+                            }
 
                             {/*або можна так. для наглядності. */}
 
@@ -34,11 +55,11 @@ function App() {
                             {/*    }*/}
                             {/*)}*/}
 
-                            <PizzaBlock title="Peperoni" price={300}/>
-                            <PizzaBlock title='Some another Pizza' price="250"/>
-                            <PizzaBlock/>
-                            <PizzaBlock/>
-                            <PizzaBlock/>
+                            {/*<PizzaBlock title="Peperoni" price={300}/>*/}
+                            {/*<PizzaBlock title='Some another Pizza' price="250"/>*/}
+                            {/*<PizzaBlock/>*/}
+                            {/*<PizzaBlock/>*/}
+                            {/*<PizzaBlock/>*/}
                         </div>
                     </div>
                 </div>
