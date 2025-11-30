@@ -21,19 +21,20 @@ function App() {
                             <Sort/>
                         </div>
 
-                        <h2 class="content__title">Все пиццы</h2>
+                        <h2 className="content__title">Все пиццы</h2>
 
                         <div className="content__items">
-                            <PizzaBlock title="Peperoni" price={300}/>
 
                             {/*або можна так. для наглядності. */}
 
-                            {PizzaBlock(
-                                {
-                                    title: "Peperoni-2",
-                                    price: 500,
-                                }
-                            )}
+                            {/*{PizzaBlock(*/}
+                            {/*    {*/}
+                            {/*        title: "Peperoni-2",*/}
+                            {/*        price: 500,*/}
+                            {/*    }*/}
+                            {/*)}*/}
+
+                            <PizzaBlock title="Peperoni" price={300}/>
                             <PizzaBlock title='Some another Pizza' price="250"/>
                             <PizzaBlock/>
                             <PizzaBlock/>
