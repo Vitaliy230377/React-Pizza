@@ -1,17 +1,48 @@
+import React from "react";
 
-function test(){
-    return 'Hello World test!';
-}
+import Header from "./components/Header";
+import Categories from "./components/Categories";
+import Sort from "./components/Sort";
+import PizzaBlock from "./components/PizzaBlock";
+
+import './scss/app.scss';
 
 function App() {
-    const name = 'React Pizza';
 
     return (
         <div className="App">
-            <h1>Hello World!</h1>
-            {alert(123)}
-            {name}
-            {test()}
+            <div className="wrapper">
+                <Header/>
+
+                <div className="content">
+                    <div className="container">
+                        <div className="content__top">
+                            <Categories/>
+                            <Sort/>
+                        </div>
+
+                        <h2 className="content__title">Все пиццы</h2>
+
+                        <div className="content__items">
+
+                            {/*або можна так. для наглядності. */}
+
+                            {/*{PizzaBlock(*/}
+                            {/*    {*/}
+                            {/*        title: "Peperoni-2",*/}
+                            {/*        price: 500,*/}
+                            {/*    }*/}
+                            {/*)}*/}
+
+                            <PizzaBlock title="Peperoni" price={300}/>
+                            <PizzaBlock title='Some another Pizza' price="250"/>
+                            <PizzaBlock/>
+                            <PizzaBlock/>
+                            <PizzaBlock/>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
