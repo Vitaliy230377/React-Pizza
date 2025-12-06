@@ -1,4 +1,5 @@
 import React from "react";
+// import {nanoid} from "nanoid";
 
 
 function Categories() {
@@ -24,7 +25,7 @@ function Categories() {
                 {
                     categories.map((category, index) => {
                         return (
-                            <li onClick={() => onClickCategory(index)}
+                            <li key={index} onClick={() => onClickCategory(index)}
                                 className={activeCategory === index ? "active" : ""}>{category}
                             </li>
                         )

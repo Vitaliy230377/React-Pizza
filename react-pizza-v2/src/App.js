@@ -33,15 +33,15 @@ function App() {
                             {
                                 pizzas.map(pizza => {
                                     return (
-                                        <PizzaBlock
+                                        <PizzaBlock key={pizza.id}
                                             title={pizza.title}
                                             price={pizza.price}
                                             imageUrl={pizza.imageUrl}
                                             pizzaTypes={pizza.types}
                                             pizzaSizes={pizza.sizes}
                                         />
-                                    // spread-operator
-                                    // <PizzaBlock {...pizza} />
+                                        // spread-operator
+                                        // <PizzaBlock {...pizza} />
                                     )
                                 })
                             }

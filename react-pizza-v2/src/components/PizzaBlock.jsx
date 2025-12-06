@@ -1,6 +1,6 @@
 // import React, {useState} from "react";
 import React from "react";
-
+// import { nanoid } from 'nanoid'
 function PizzaBlock({title, price, imageUrl, pizzaTypes, pizzaSizes}) {
 
     // Приклад деструктуризації об'єкта бо тепер замість props зразу деструктурую обєкт і створюю змінні
@@ -16,9 +16,6 @@ function PizzaBlock({title, price, imageUrl, pizzaTypes, pizzaSizes}) {
         setPizzaCount(pizzaCount + 1);
     }
 
-    console.log("була перерисовка", pizzaCount);
-
-    console.log(pizzaTypes);
 
     const typeNames = [
         'тонкое',
@@ -27,13 +24,11 @@ function PizzaBlock({title, price, imageUrl, pizzaTypes, pizzaSizes}) {
     ]
 
     const [activeType, setActiveType] = React.useState(0);
-    const onClickType = (index) => {
-        setActiveType(index);
-    }
+    // const onClickType = (index) => {
+    //     setActiveType(index);
+    // }
 
-    const onClickSize = (index) => {
-
-    }
+    // const onClickSize = (index) => {}
 
     return (
         <div className="pizza-block">
@@ -48,14 +43,14 @@ function PizzaBlock({title, price, imageUrl, pizzaTypes, pizzaSizes}) {
                     {
                         pizzaTypes.map((pizzaTypeIndex) => (
                             // <li onClick={() => onClickType(pizzaTypeIndex)} className={activeType === pizzaTypeIndex ? "active" : ""}>{typeNames[pizzaTypeIndex]}</li>
-                            <li onClick={() => setActiveType(pizzaTypeIndex)} className={activeType === pizzaTypeIndex ? "active" : ""}>{typeNames[pizzaTypeIndex]}</li>
+                            <li key={pizzaTypeIndex} onClick={() => setActiveType(pizzaTypeIndex)} className={activeType === pizzaTypeIndex ? "active" : ""}>{typeNames[pizzaTypeIndex]}</li>
                         ))
                     }
                 </ul>
                 <ul>
                     {
                         pizzaSizes.map((pizzaSize, index) => (
-                            <li onClick={()=> setActiveSize(index)} className={activeSize === index ? "active" : ""}>{pizzaSize} см</li>
+                            <li key={pizzaSize} onClick={()=> setActiveSize(index)} className={activeSize === index ? "active" : ""}>{pizzaSize} см</li>
                         ))
                     }
                 </ul>
@@ -80,7 +75,6 @@ function PizzaBlock({title, price, imageUrl, pizzaTypes, pizzaSizes}) {
                 </button>
             </div>
         </div>
-
     )
 }
 
