@@ -1,7 +1,7 @@
 // import React, {useState} from "react";
 import React from "react";
 // import { nanoid } from 'nanoid'
-function PizzaBlock({title, price, imageUrl, pizzaTypes, pizzaSizes}) {
+function Index({title, price, imageUrl, pizzaTypes, pizzaSizes}) {
 
     // Приклад деструктуризації об'єкта бо тепер замість props зразу деструктурую обєкт і створюю змінні
     // const {a, b, c} = {a: "test title for destruct", b: 111, c: 111222};
@@ -78,4 +78,4 @@ function PizzaBlock({title, price, imageUrl, pizzaTypes, pizzaSizes}) {
     )
 }
 
-export default PizzaBlock
+export default Index

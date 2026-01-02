@@ -4,7 +4,7 @@ import React from "react";
 function Sort() {
 
     const [isVisible, setVisible] = React.useState(false);
-    const list = ['популярности111', 'цене', 'aлфавиту'];
+    const list = ['популярности', 'цене', 'aлфавиту'];
     const [selectedSortValue, setSelectedSortValue] = React.useState(0);
     const sortName = list[selectedSortValue];
 
