@@ -25,9 +25,13 @@ body {
   }
 
   &__items {
+    $gap: 30px;
+    position: relative;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: $gap;
   }
 
   &__top {
